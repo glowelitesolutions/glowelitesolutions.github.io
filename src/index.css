@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .header-container {
+    @apply flex relative z-10 mx-auto py-4 min-h-[10vh] bg-white max-lg:w-[85vw];
+  }
+
+  .nav {
+    @apply m-auto flex w-[85vw] items-center justify-between gap-6;
+  }
+
+  .menu-items {
+    @apply uppercase font-medium font-afacad hover:text-[#00030280] hover:cursor-pointer hover:py-2 hover:border-y-2 hover:border-[#06974e];
+  }
+
+  .cta-button {
+    @apply text-sm font-afacad rounded-sm font-semibold px-10 uppercase py-2 bg-primary text-white max-[1080px]:px-6 hover:bg-white hover:text-bodyTxt hover:border-2 hover:border-primary;
+  }
+
+  .section-id {
+    @apply uppercase font-afacad text-primary px-8 py-1 mb-8 text-xs font-semibold border border-secondary rounded-sm;
+  }
+
+  .title {
+    @apply text-4xl font-afacad font-bold text-balance lg:tracking-wide text-headerTxt;
+  }
+
+  .card-title {
+    @apply text-xl font-afacad font-bold lg:tracking-wide text-headerTxt max-w-[50vw] max-lg:max-w-[85vw];
+  }
+
+  .card-icon {
+    @apply border border-secondary rounded-md p-2;
+  }
+
+  .sub-title {
+    @apply text-xl font-afacad font-semibold text-center lg:tracking-wide text-subHeaderTxt max-w-[50vw] max-lg:max-w-[85vw];
+  }
+
+  .body-text {
+    @apply font-montserrat text-bodyTxt leading-7 lg:tracking-wide;
+  }
+
+  .card-text {
+    @apply font-montserrat text-sm text-bodyTxt leading-7 lg:tracking-wide;
+  }
+
+  .container {
+    @apply mx-auto flex items-center justify-between;
+  }
+
+  .footer-container {
+    @apply min-h-[10vh] border-2 border-orange-400;
+  }
+
+  .btn-link {
+    @apply my-4 flex justify-center w-60 max-sm:w-48;
+  }
+}
+
+@layer utilities {
+  /* Hamburger line styling start */
+  .hamburger-line {
+    @apply bg-secondary block h-[2px] w-[24px] my-[3px] transition-all duration-300 ease-in-out;
+  }
+
+  .sidebar {
+    @apply fixed top-0 right-[-250px] h-full bg-white transition-all duration-300 ease-in p-12;
+  }
+
+  .sidebar.open {
+    @apply right-0;
+  }
+
+  .overlay {
+    @apply absolute top-0 right-0 w-[42px] h-[42px] m-2 shadow focus:outline-none text-black font-bold transition-all duration-300 ease-in-out hidden;
+  }
+
+  .overlay.open {
+    @apply block;
+  }
+  /* Hamburger line styling end */
+}

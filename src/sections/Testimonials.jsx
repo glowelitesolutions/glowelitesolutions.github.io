@@ -4,7 +4,7 @@ import { TestimonialsCard } from "../components";
 const Testimonials = () => {
   return (
     <section className="bg-white py-12">
-    <div className="container max-w-[70vw] flex-col gap-5 max-lg:max-w-[95vw]">
+    <div className="container max-w-[80vw] flex-col gap-5 max-lg:max-w-[95vw]">
       <p className="section-id" id="testimonials">TESTIMONIALS</p>
       {/* <div className=""> */}
       <h2 className="title text-center">What our clients are saying about us</h2>

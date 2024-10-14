@@ -1,14 +1,34 @@
 import { headerLogo } from "../assets/images";
-// import { hamburgerOpen, hamburgerClose } from "../assets/icons";
 import { navLinks } from "../constants";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   const handleMenuToggle = () => {
     setIsOpen(!isOpen); // Toggle the state
   };
+
+  // Function to check scroll position
+  const handleScroll = () => {
+    // Hide button when you scroll past the header (header height is 64px in this case)
+    if (window.scrollY > 64) {
+      setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
+  };
+
+  // Add scroll event listener when component mounts
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    // Remove event listener when component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <header className="header-container">
@@ -35,13 +55,16 @@ const Nav = () => {
       </nav>
       {/* Hamburger Icon */}
       <div>
-        <button
-          onClick={handleMenuToggle}
-          className="{`absolute right-0 top-0 m-2 flex h-[48px] w-[52px] flex-col items-center justify-center shadow transition-all duration-300 ease-in-out focus:outline-none lg:hidden ${isOpen ? 'open' : ''}`}">
-          <span className="hamburger-line top"></span>
-          <span className="hamburger-line middle"></span>
-          <span className="hamburger-line bottom"></span>
-        </button>
+        {/* Floating button */}
+        {isVisible && (
+          <button className="hamburger" onClick={handleMenuToggle}>
+            <div className={`hamburger-button ${isOpen ? 'open' : ''}`}>
+              <span className="hamburger-line top"></span>
+              <span className="hamburger-line middle"></span>
+              <span className="hamburger-line bottom"></span>
+            </div>
+          </button>
+        )}
         {/* Nav links and button */}
         <div className={`sidebar flex flex-col ${isOpen ? 'open' : ''}`}>
           <ul className="flex-1 flex-col justify-center items-center space-y-4">
@@ -59,9 +82,6 @@ const Nav = () => {
           </ul>
           {/* Button */}
           <a href="#" onClick={handleMenuToggle} className={`bg-primary py-2 px-4 rounded-sm hover:bg-white hover:border-2 hover:border-primary hover:text-primary font-[afacad] font-semibold text-white uppercase lg:hidden ${isOpen ? 'open' : ''}`}>Make Appointment</a>
-          <div className={`overlay flex flex-col items-center justify-center cursor-pointer ${isOpen ? 'open' : ''}`} onClick={handleMenuToggle}>
-            <p className="font-montserrat font-semibold m-2 px-1.5 text-lg">X</p>
-          </div>
         </div>
       </div>
     </header>

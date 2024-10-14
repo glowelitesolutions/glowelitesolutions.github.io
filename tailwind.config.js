@@ -42,9 +42,6 @@ export default {
         bodyTxt: '#00030280', // ALso used for link hover and active.
         contactBorder: '#62644C4D',
       },
-      boxShadow: { // X(h-offset) Y(v-offset) blur spread color
-        bx: "0 1px 5px 0 #62644C1A",
-      },
     },
   },
   plugins: [],

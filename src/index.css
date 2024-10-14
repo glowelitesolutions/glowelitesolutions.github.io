@@ -12,6 +12,13 @@
   scroll-behavior: smooth;
 }
 
+section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 @layer components {
   .header-container {
     @apply flex relative z-10 mx-auto py-4 min-h-[10vh] bg-white max-lg:w-[85vw];
@@ -62,34 +69,61 @@
   }
 
   .footer-container {
-    @apply min-h-[10vh] border-2 border-orange-400;
+    @apply flex justify-center items-center bg-bgColor shadow;
   }
 
   .btn-link {
     @apply my-4 flex justify-center w-60 max-sm:w-48;
   }
+
+  .form-input {
+    @apply p-2 rounded-sm text-contactBorder font-afacad text-lg border border-contactBorder;
+  }
 }
 
 @layer utilities {
   /* Hamburger line styling start */
+  .hamburger {
+    @apply fixed right-5 top-5 z-50 flex h-[48px] w-[52px] flex-col items-center justify-center shadow transition-all duration-300 ease-in-out focus:outline-none lg:hidden;
+  }
+
   .hamburger-line {
-    @apply bg-secondary block h-[2px] w-[24px] my-[3px] transition-all duration-300 ease-in-out;
+    @apply bg-secondary block h-[2px] w-[24px] my-[6px] transition-all duration-300 ease-in-out;
   }
 
   .sidebar {
-    @apply fixed top-0 right-[-250px] h-full bg-white transition-all duration-300 ease-in p-12;
+    @apply fixed top-0 right-[-250px] h-full transition-all duration-300 ease-in p-12;
   }
 
   .sidebar.open {
-    @apply right-0;
+    @apply right-0 bg-white;
   }
 
-  .overlay {
-    @apply absolute top-0 right-0 w-[42px] h-[42px] m-2 shadow focus:outline-none text-black font-bold transition-all duration-300 ease-in-out hidden;
+  .hamburger-line.top {
+    @apply origin-top-left;
   }
 
-  .overlay.open {
-    @apply block;
+  .hamburger-line.bottom {
+    @apply origin-bottom-left;
+  }
+
+  .hamburger-button.open {
+    /* padding-left: 5px; */
+    @apply pl-5 pt-2;
+  }
+
+  .hamburger-button.open .top {
+    /* transform: rotate(45deg) translate(-5px, 5px); */
+    @apply rotate-45 -translate-y-[5px] -translate-x-[5px];
+  }
+
+  .hamburger-button.open .middle {
+    @apply opacity-0;
+  }
+
+  .hamburger-button.open .bottom {
+    /* transform: rotate(-45deg) translate(-5px, -5px); */
+    @apply -rotate-45 -translate-y-[5px] -translate-x-[5px];
   }
   /* Hamburger line styling end */
 }

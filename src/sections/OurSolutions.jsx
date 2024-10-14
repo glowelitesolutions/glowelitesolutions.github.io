@@ -4,7 +4,7 @@ import { FeatureCard } from "../components";
 const OurSolutions = () => {
   return (
     <section className="bg-bgColor py-16">
-    <div className="container max-w-[70vw] flex-col gap-5 max-lg:max-w-[95vw]">
+    <div className="container max-w-[80vw] flex-col gap-5 max-lg:max-w-[95vw]">
       <p className="section-id" id="our-solutions">OUR SOLUTIONS</p>
       <h2 className="title text-center">Transformative Solutions for Health Innovation</h2>
       <h3 className="sub-title">Explore how our expert services can elevate your agritech and biotech ventures, driving

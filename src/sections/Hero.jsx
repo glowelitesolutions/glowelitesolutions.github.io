@@ -20,7 +20,7 @@ const Hero = () => {
             Unlock the full potential of your agricultural and biomedical projects with GLOWELITE SOLUTION LLC—where innovation meets sustainability!
           </p>
           <a
-            href="#"
+            href="#about-us"
             className="cta-button btn-link"
             >Learn More</a
           >

@@ -29,10 +29,6 @@ export default {
         montserrat: ["Montserrat", "sans-serif"],
         afacad: ["Afacad", "sans-serif"],
       },
-      backgroundImage: {
-        // hero: "url('assets/images/collection-background.svg')",
-        // card: "url('assets/images/thumbnail-background.svg')",
-      },
       colors: {
         primary: '#06974E', // for btns and section id
         secondary: '#62644C', // for section id borders and other borders

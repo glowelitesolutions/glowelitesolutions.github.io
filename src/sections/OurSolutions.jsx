@@ -15,7 +15,7 @@ const OurSolutions = () => {
           <FeatureCard key={feature.label} {...feature} />
         ))}
       </div>
-      <a href="#" className="cta-button btn-link">Make Appointment</a>
+      <a href="#contact-us" className="cta-button btn-link">Make Appointment</a>
     </div>
   </section>
   )

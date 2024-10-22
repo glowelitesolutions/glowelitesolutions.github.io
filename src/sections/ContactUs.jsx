@@ -11,15 +11,20 @@ const ContactUs = () => {
       {/* Contact Form and Address */}
       <div className="flex justify-center items-center py-12 gap-8 max-md:flex-col-reverse max-md:gap-5 max-md:py-6">
         {/* form */}
-        <form action="" className="grid grid-cols-2 rounded-sm gap-2 p-4 border border-contactBorder max-sm:p-2 max-sm:gap-1 max-sm:w-[85vw]">
-          <input type="" placeholder="First name" className="form-input" />
-          <input type="" placeholder="Last name" className="form-input" />
-          <input type="" placeholder="Phone number" className="col-span-full form-input" />
-          <input type="" placeholder="Email" className="col-span-full form-input" />
-          <textarea type="" placeholder="Message" className="col-span-full form-input min-h-[25vh]" />
-          <button type="submit" className="cta-button col-span-full text-lg">
-            Send
-          </button>
+        <form action="https://formsubmit.co/el/dovusi" method="POST" className="grid grid-cols-2 rounded-sm gap-2 p-4 border border-contactBorder max-sm:p-2 max-sm:gap-1 max-sm:w-[85vw]">
+            <input type="text" name="name" id="name" placeholder="John Doe" className="form-input" required />
+            <input type="email" name="email" id="email" placeholder="johndoe@gmail.com" className="form-input" required />
+            <div className="error-text">First name is required</div>
+            <div className="error-text">Your email address is required</div>
+            <input type="number" name="phone" id="phone" placeholder="+1234567890" className="form-input" required />
+            <input type="text" name="phone" id="phone" placeholder="Enquiry" className="form-input" required />
+            <div className="error-text">Your phone number is required</div>
+            <div className="error-text">Subject is required</div>
+            <textarea name="message" id="message" placeholder="Your Message" rows="10" className="col-span-full form-input min-h-[25vh] resize-none" required />
+            <div className="error-text">Your message cant be blank</div>
+            <button type="submit" value="submit" className="cta-button col-span-full text-lg">
+              Send
+            </button>
         </form>
         {/* address */}
         <div className="flex flex-col gap-5 max-md:items-center">

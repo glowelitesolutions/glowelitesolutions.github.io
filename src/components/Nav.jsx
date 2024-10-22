@@ -1,4 +1,5 @@
 import { headerLogo } from "../assets/images";
+import { upArrow } from "../assets/icons";
 import { navLinks } from "../constants";
 import { useState, useEffect } from 'react'
 
@@ -51,7 +52,10 @@ const Nav = () => {
           ))}
         </ul>
         {/* Button */}
-        <a href="#" className="cta-button max-lg:hidden">Make Appointment</a>
+        <a href="#contact-us" className="cta-button max-lg:hidden">Make Appointment</a>
+        <a href="#main" className="back-to-top">
+          <img src={ upArrow } alt="go back to the top" width={160} />
+        </a>
       </nav>
       {/* Hamburger Icon */}
       <div>
@@ -81,7 +85,7 @@ const Nav = () => {
             ))}
           </ul>
           {/* Button */}
-          <a href="#" onClick={handleMenuToggle} className={`bg-primary py-2 px-4 rounded-sm hover:bg-white hover:border-2 hover:border-primary hover:text-primary font-[afacad] font-semibold text-white uppercase lg:hidden ${isOpen ? 'open' : ''}`}>Make Appointment</a>
+          <a href="#contact-us" onClick={handleMenuToggle} className={`bg-primary py-2 px-4 rounded-sm hover:bg-white hover:border-2 hover:border-primary hover:text-primary font-[afacad] font-semibold text-white uppercase lg:hidden ${isOpen ? 'open' : ''}`}>Make Appointment</a>
         </div>
       </div>
     </header>

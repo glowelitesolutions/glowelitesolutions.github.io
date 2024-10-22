@@ -10,26 +10,27 @@ import {
 } from "./sections";
 
 const App = () => (
-  <main className="relative">
+  <main id="main" className="relative">
     <Nav />
-    <section className="xl:padding-1 wide:padding-r padding-b">
+    {/* <section className="xl:padding-1 wide:padding-r padding-b"> */}
+    <section className="">
       <Hero />
-      <section className="padding">
+      <section className="">
         <AboutUs />
       </section>
-      <section className="padding">
+      <section className="">
         <OurSolutions />
       </section>
-      <section className="padding-x py-10">
+      <section className="">
         <Testimonials />
       </section>
-      <section className="padding">
+      <section className="">
         <CallToAction />
       </section>
-      <section className="bg-pale-blue padding">
+      <section className="">
         <ContactUs />
       </section>
-      <section className="ng-black padding-x padding-t pb-8">
+      <section className="">
         <Footer />
       </section>
     </section>

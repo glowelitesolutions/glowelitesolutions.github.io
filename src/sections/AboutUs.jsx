@@ -12,7 +12,7 @@ const AboutUs = () => {
             agriculture and biotechnology to develop sustainable health solutions that improve lives. Our integrated
             AgriBio strategy empowers companies and research institutions to leverage the full potential of agricultural
             resources through innovative biotechnological processes</p>
-          <a href="#" className="cta-button btn-link">Learn More</a>
+          <a href="#about-us" className="cta-button btn-link">Learn More</a>
         </div>
       </div>
     </div>

@@ -12,6 +12,7 @@ import instagram from './instagram.svg'
 import whatsApp from './whatsapp.svg'
 import hamburgerOpen from './hamburger-open.svg'
 import hamburgerClose from './hamburger-close.svg'
+import upArrow from './up-arrow.svg'
 
 export {
     handshake,
@@ -28,4 +29,5 @@ export {
     whatsApp,
     hamburgerOpen,
     hamburgerClose,
+    upArrow,
 }

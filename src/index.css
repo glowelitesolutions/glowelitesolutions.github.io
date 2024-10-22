@@ -28,6 +28,10 @@ section {
     @apply m-auto flex w-[85vw] items-center justify-between gap-6;
   }
 
+  .back-to-top {
+    @apply fixed right-2 bottom-2 ease-in-out max-w-9 bg-[#ffffff7c] p-2.5 rounded-md shadow-lg border border-[#62644c52] hover:shadow-md hover:bg-[#06974e52] hover:border-none hover:p-2;
+  }
+
   .menu-items {
     @apply uppercase font-medium font-afacad hover:text-[#00030280] hover:cursor-pointer hover:py-2 hover:border-y-2 hover:border-[#06974e];
   }
@@ -77,7 +81,11 @@ section {
   }
 
   .form-input {
-    @apply p-2 rounded-sm text-contactBorder font-afacad text-lg border border-contactBorder;
+    @apply p-2 rounded-sm text-headerTxt font-afacad text-lg border border-contactBorder focus:text-secondary placeholder:text-[#62644c70];
+  }
+
+  .error-text {
+    @apply text-sm text-red-600 pb-1.5 -mt-1.5 hidden;
   }
 }
 

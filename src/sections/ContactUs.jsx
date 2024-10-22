@@ -11,7 +11,7 @@ const ContactUs = () => {
       {/* Contact Form and Address */}
       <div className="flex justify-center items-center py-12 gap-8 max-md:flex-col-reverse max-md:gap-5 max-md:py-6">
         {/* form */}
-        <form action="https://formsubmit.co/el/dovusi" method="POST" className="grid grid-cols-2 rounded-sm gap-2 p-4 border border-contactBorder max-sm:p-2 max-sm:gap-1 max-sm:w-[85vw]">
+          <form action="https://formspree.io/f/mqakalpl" method="POST" className="grid grid-cols-2 rounded-sm gap-2 p-4 border border-contactBorder max-sm:p-2 max-sm:gap-1 max-sm:w-[85vw]">
             <input type="text" name="name" id="name" placeholder="John Doe" className="form-input" required />
             <input type="email" name="email" id="email" placeholder="johndoe@gmail.com" className="form-input" required />
             <div className="error-text">First name is required</div>

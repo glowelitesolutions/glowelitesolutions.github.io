@@ -17,7 +17,7 @@ const ContactUs = () => {
             <div className="error-text">First name is required</div>
             <div className="error-text">Your email address is required</div>
             <input type="number" name="phone" id="phone" placeholder="+1234567890" className="form-input" required />
-            <input type="text" name="phone" id="phone" placeholder="Enquiry" className="form-input" required />
+            <input type="text" name="subject" id="subject" placeholder="Enquiry" className="form-input" required />
             <div className="error-text">Your phone number is required</div>
             <div className="error-text">Subject is required</div>
             <textarea name="message" id="message" placeholder="Your Message" rows="10" className="col-span-full form-input min-h-[25vh] resize-none" required />

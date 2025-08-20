@@ -88,14 +88,14 @@ export const contactUs = [
         link: "#"
     },
     { 
-        label: "Phone",
+        label: "Email",
         subtext: "admin@glowelitesolutions.com",
         link: "mailto:admin@glowelitesolutions.com"
     },
     { 
-        label: "Email",
-        subtext: "+18327437057",
-        link: "tel:+18327437057"
+        label: "Phone",
+        subtext: "+18325206484",
+        link: "tel:+18325206484"
     },
 ];
 

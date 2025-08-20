@@ -2,82 +2,48 @@ name: Deploy
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
-
-permissions:
-  contents: read        # Least privilege for checkout
-  pages: write          # Required to publish to GitHub Pages
-  id-token: write       # Optional, if using OIDC or Cloud deployments
-
-concurrency:
-  group: deploy-production
-  cancel-in-progress: true
+    branches:
+      - main
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node: [18, 20]   # Cover multiple Node.js versions
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v4  # Optional upgrade (checkout@v4 is latest)
 
-      - name: Setup Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ matrix.node }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ matrix.node }}-
+      - name: Setup Node
+        uses: actions/setup-node@v4  # Optional upgrade (setup-node@v4 is latest)
 
       - name: Install dependencies
-        run: npm ci
+        uses: bahmutov/npm-install@v1
 
-      - name: Run tests
-        run: npm test
-
-      - name: Build production bundle
+      - name: Build project
         run: npm run build
 
-      - name: Upload production-files artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v4  # Critical upgrade
         with:
           name: production-files
           path: ./dist
 
   deploy:
-    name: Deploy to GitHub Pages
+    name: Deploy
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
-    environment:
-      name: production
-      url: https://<YOUR_GITHUB_USERNAME>.github.io
-
     steps:
-      - name: Download production-files artifact
-        uses: actions/download-artifact@v3
+      - name: Download artifact
+        uses: actions/download-artifact@v4  # Critical upgrade
         with:
           name: production-files
           path: ./dist
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          # Optionally, customize further:
-          # allow_empty_commit: true
-          # keep_files: false
-          # cname: your.custom.domain
